@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>footer</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./logo/logo1.png" alt="logo.png" class="logo">
+        </div>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <nav>
+            <ul class="navbar-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Formas de Pago</a></li>
+                <li>
+                    <a href="#">Planes y tarifas
+                        <img src="./logo/flecha.png" alt="flecha" class="flecha">
+                    </a>
+                    <ul>
+                        <li><a href="#">Televisión por cable</a></li>
+                        <li><a href="#">Internet residencial</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Todos los canales</a></li>
+            </ul>
+        </nav>
+
+        <div class="botones">
+            <button type="button" onclick="alert('Botón 1')" class="botones">
+                <img src="./logo/login.png" alt="login" class="icono">
+                Iniciar sesión
+            </button>
+            <button type="button" onclick="alert('Botón 2')" class="botones">
+                <img src="./logo/money.png" alt="money" class="icono">
+                Consultar Deuda
+            </button>
+        </div>
+    </header>
+
+    
+    
+    <main class="principal">
+        <div class="intro">
+            <h1>¿Qué plan eliges?</h1>
+                <p>Con los planes de internet de fibra óptica de TV Zamora, tienes la libertad de elegir la
+                    velocidad de <br> conexión que se adapte a tu trabajo y estilo de vida, sin sorpresas por tarifas 
+                    adicionales por consumo.</p>
+
+            <button type="button" onclick="alert('ver planes')" class="botones">
+                <img src="./logo/web.png" alt="web" class="icono">
+                Ver planes de internet
+            </button>
+        </div>
+        <img src="./logo/networld.png" alt="networld" class="networld">
+    </main>
+
+    <div class="container_tarjetas">
+        <h2 class="planes">Elige el plan que mejor se adapte a tus necesidades:</h2>
+        <section class="tarjeta">
+            <img src="./logo/tv_one.png" alt="tv_one" class="tv_one">
+            <h2>Televisión por cable</h2>
+                <p>Disfruta de tus programas favoritos con la mejor calidad de imagen y 
+                    sonido con nuestro servicio de televisión por cable.</p>
+            <button type="button" onclick="alert('Ver todos los programas')" class="botones">
+                <img src="./logo/ojo.png" alt="ojo" class="icono">
+                Ver más
+            </button>
+        </section>
+
+        <section class="tarjeta">
+            <img src="./logo/explorer.png" alt="explorer" class="explorer">
+            <h2>Internet residencial</h2>
+                <p>Conéctate a la velocidad de la luz y navega sin límites con nuestro 
+                    servicio de internet residencial.</p>
+                    <button type="button" onclick="alert('Ver todos los programas')" class="botones">
+                        <img src="./logo/ojo.png" alt="ojo" class="icono">
+                        Ver más
+                    </button>
+        </section>
+
+        <section class="tarjeta">
+            <img src="./logo/database.png" alt="database" class="database">
+            <h2>Internet empresarial</h2>
+                <p>Potencia tu negocio con nuestra conexión a internet de alta velocidad y confiabilidad empresarial.</p>
+                <button type="button" onclick="alert('Ver todos los programas')" class="botones">
+                    <img src="./logo/ojo.png" alt="ojo" class="icono">
+                    Ver más
+                </button>
+        </section>  
+    </div>
+
+    <div class="container-parrafo">
+        <h3 class="parrafo-principal">¡Llegamos a cada rincón del oriente de Venezuela! 🌟</h3>
+
+        <div class="parrafo">
+            <p>Con la mejor cobertura en el oriente del país, hemos expandido nuestra presencia para mantenerte conectado 
+                en las ciudades que amas. ¡Estamos en Santa Elena, Puerto Ordaz, San Félix, Upata, Guasipati, Maturín y 
+                Santa Bárbara de Barinas!</p> <br>
+
+            <p>Donde sea que te encuentres en el oriente de Venezuela, estamos listos para brindarte la mejor conexión y 
+                los servicios de alta calidad que mereces. ¡Conéctate con nosotros y experimenta la diferencia de una 
+                cobertura excepcional en tu área!</p> <br>
+            
+            <p>No importa si estás en la selva, la ciudad o en algún lugar entre montañas, ¡nuestra red te tiene cubierto! 
+                Únete a la revolución de la conectividad en el oriente de Venezuela. ¡La mejor cobertura está a solo un clic 
+                de distancia! 🚀</p>
+        </div>
+
+        <div>
+            <img src="./logo/mapa1.png" alt="mapa1" class="mapa1">
+        </div>
+
+    </div>
+
+    <div class="registro-info">
+     <section class="registro">
+            <h2 class="contacto">Indícanos tus datos</h2>
+            <h4 class="desc-contacto">Indícanos los siguientes datos que te pedimos
+                a continuación para poder ponernos en contacto con usted.
+            </h4>
+            <form class="formulario">
+                <label for="nombre">Nombres:</label>
+                <input type="text" id="nombres" name="nombres" required>
+
+                <label for="nombre">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+
+                <label for="telefono">Teléfono:</label>
+                    <div class="selec-pais">
+
+                        <select id="country" name="country" onchange="updateCode()">
+                            <option value="58" data-flag="🇻🇪">VE (+58)</option>
+                            <option value="57" data-flag="🇨🇴">CO (+57)</option>
+                            <option value="56" data-flag="🇨h">CH (+56)</option>
+                        </select>
+                        
+                        <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required>
+                    </div>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+
+                <label for="servicio">¿Que servicios deseas?</label>
+                <input type="text" id="servicio" name="servicio" required>
+                
+                <!-- <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea> -->
+                
+                <button type="submit">Registrarse</button>
+            </form>
+        </section>
+
+        <div class="informacion1">
+            <div class="intro-info">
+                <h3>La solución a tus necesidades de conectividad está a solo 4 pasos de distancia! 🚀</h3>
+                <p>¿Quieres disfrutar de nuestro excepcional servicio? ¡Es más fácil de lo que piensas! <br> Contáctanos hoy 
+                    mismo y en tan solo 4 pasos, tendrás nuestra increíble oferta en la <br> comodidad de tu hogar:
+                </p>
+            </div>
+            <div class="punto-info">
+                <div class="info-item">
+                    <label for="informacion">1️⃣ Contáctanos:</label>
+                    <span class="separator">|</span>
+                    <small> Llámanos, envíanos un mensaje o llena nuestro formulario en línea. <br>
+                        Estamos listos para escucharte.</small>
+                </div>
+            
+                <div class="info-item">
+                    <label for="informacion">2️⃣ Consulta personalizada:</label>
+                    <span class="separator">|</span>
+                    <small>Nuestro equipo te brindará una consulta personalizada <br>
+                        para entender tus necesidades y ofrecerte el plan perfecto.</small>
+                </div>
+            
+                <div class="info-item">
+                    <label for="informacion">3️⃣ Instalación sin complicaciones:</label>
+                    <span class="separator">|</span>
+                    <small> Programaremos la instalación a tu conveniencia. <br>
+                        Nuestros técnicos expertos se encargarán de todo.</small>
+                </div>
+            
+                <div class="info-item">
+                    <label for="informacion">4️⃣ Disfruta de la conectividad:</label>
+                    <span class="separator">|</span>
+                    <small> ¡Listo! En poco tiempo, estarás disfrutando de una <br> 
+                        conexión rápida y confiable en tu hogar.</small>
+                </div>
+            </div>
+            <div class="final-info">
+                <p>No pierdas más tiempo con conexiones lentas. ¡Contáctanos ahora y experimenta la diferencia <br> de un servicio
+                de primera clase en tan solo 4 sencillos pasos! Con nosotros, la conectividad es <br> sinónimo de simplicidad y calidad. 📶🏡
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="gestiona">Gestiona tu cuenta</h3>
+    <div class="botones2">
+        
+        <button type="button" onclick="alert('Botón 1')" class="botones">
+            <img src="./logo/login.png" alt="login" class="icono2">
+            Iniciar sesión
+        </button>
+        <button type="button" onclick="alert('Botón 2')" class="botones">
+            <img src="./logo/money.png" alt="money" class="icono2">
+            Consultar Deuda
+        </button>
+    </div>
+
+    <footer>
+        <div>
+            <img src="./logo/logofooter.png" alt="logofooter" class="logofooter">
+            <p>&copy; Av. Paseo Caroní con avenida 7. <br>
+                Edificio Cable Network, Sector Unare II, Puerto Ordaz.
+            </p>
+        </div>
+        <div class="telefonos">
+            <p>Teléfonos: <br>
+                0286-9521845 <br>
+                0414-8810705
+            </p>
+        </div>
+        <div class="redes">
+            <a href="#">
+                <img src="./logo/whatsapp.png" alt="" class="whatsapp">
+            </a>
+
+            <a href="#">
+                <img src="./logo/zredes.png" alt="" class="zredes">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

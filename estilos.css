@@ -1,0 +1,1382 @@
+:root {
+    --c1: #03346c; /*color azul de pagina real*/
+    --c2: #f2f2f2; /*blanco que lleva pagina real*/
+    --c3: #0b2639; /*color del footer*/
+    --c4: #000000; /*color que lleva pagina real*/
+    --c5: #09468c69; /*semitransparencia que estoy usando en el menu*/
+    --c6: #4d759fd5; /*semitransparencia que estoy usando en el sub-menu*/
+    --c7: #0056b3; /*hover de los botones*/
+}
+
+/* >>>>> RESET DE ESTILOS <<<<< */
+* {
+    margin: 0; /* Elimina los margenes predeterminados */
+    padding: 0; /* Elimina los rellenos predeterminados */
+    box-sizing: border-box; /* Incluye el relleno en el ancho y el alto del elemento */
+}
+
+/* >>>>> ESTILOS DEL BODY (PAGINA PRINCIPAL) <<<<< */
+body {
+    font-family: Arial, sans-serif; /* Estilo de letra */
+    line-height: 1.6; /* Espaciado entre líneas */
+    background-color: #f4f4f4; /* Cambia esto a tu color de fondo */
+}
+
+/* >>>>> ESTILOS DEL HEADER <<<<< */
+header {
+    background: var(--c5); /* Cambia esto a tu color de fondo del menu */
+    color: #fff; /* Cambia esto a tu color de texto */
+    padding: 10px 0; /* Espaciado interno */
+    display: flex; /* Usa flexbox para alinear los elementos en línea */
+    justify-content: space-between; /* Alinea los elementos a la derecha */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+}
+
+header .logo {
+    max-width: 250px; /* Cambia esto según lo que necesites */
+    max-height: 500px; /* Cambia esto según lo que necesites */
+    height: auto; /* Mantiene la proporción */
+    width: auto; /* Mantiene la proporción */
+    margin-left: 80px; /* Espacio a la izquierda */
+    position: relative; /* Posicionamiento relativo */
+}
+
+/* >>>>> POSICIONAMIENTO DE LAS LETRAS DEL MENU <<<<<*/
+header nav {
+    display: flex; /* Usa flexbox para alinear los elementos en línea */ /* Alinea los elementos a la derecha */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    margin-left: auto; /* Alinea los elementos a la derecha */
+    padding-right: 3rem; /* Espacio a la derecha */
+}
+
+header nav ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; /* Usa flexbox para alinear los elementos en línea */
+    margin: 0; /* Elimina los margenes predeterminados */
+    padding: 0; /* Elimina los rellenos predeterminados */
+}
+
+header nav ul li {
+    position: relative;
+    margin: 0 10px; /* Espacio entre los enlaces del menu  */
+}
+
+header nav ul li a {
+    color: var(--c4);
+    text-decoration: none; /* Sin subrayado */
+    font-size: 20px;
+    transition: all 300ms ease; /* Transición suave para todos los elementos */
+    display: inline-block; /* Asegura que los enlaces ocupen el espacio necesario */
+}
+
+/* >> Cambia el color del enlace y agrega un subrayado al pasar el mouse por encima << */
+header  nav ul li a:hover { 
+    color: var(--c1);
+    text-decoration: underline; /* Agrega un subrayado al pasar el mouse por encima */
+    transform: scale(1.1); /* Escala el enlace al pasar el mouse por encima */
+}
+
+header nav ul li ul {
+    opacity: 0; /* Oculta el submenú por defecto */
+    position: absolute; /* Posiciona el submenú de forma absoluta */
+    top: 100%; /* Coloca el submenú justo debajo del elemento padre */
+    right: -20px; /* Alinea el submenú a la izquierda del elemento padre */
+    background-color: var(--c6); /* Color de fondo del submenú */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(185, 6, 6, 0.856); /* Sombra del sub menu*/
+    z-index: 1; /* Asegúrate de que el submenú esté por encima de otros elementos */
+    width: 130%; /* Asegura que el submenú ocupe todo el ancho del elemento padre */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición suave para la opacidad y el desplazamiento */
+    transform: translateY(10px); /* Desplaza el submenú hacia abajo inicialmente */
+    visibility: hidden; /* Oculta el submenú */
+}
+
+header nav ul li:hover > ul {
+    opacity: 1; /* Muestra el submenú */
+    transform: translateY(0); /* Restablece el desplazamiento al mostrar */
+    visibility: visible; /* Asegura que el submenú sea visible */
+}
+
+header nav ul li ul li a {
+    font-size: 15px; /* Tamaño de fuente del submenu*/
+    color: var(--c2); /* Color del texto del submenu */
+    padding: 5px 0px 3px 0px; /* Espaciado interno */
+    display: block;
+    background-color: none;
+    font-weight: bold;
+}
+
+header .flecha {
+    width: 15px; /* Ajusta el ancho de la flecha */
+    height: 15px; /* Ajusta el alto de la flecha */
+    margin-left: -1px; /* Espacio entre el texto y la flecha */
+}
+
+header .botones {
+    display: flex; /* Usa flexbox para alinear los elementos en línea */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    padding-right: 30px; /* Espacio a la derecha de los botones */
+}
+
+header .botones button {
+    border-radius: 10px;
+    background-color: var(--c1);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--c2);
+    margin-left: 10px; /* Espacio entre los botones */
+    margin-right: 15px; /* Espacio entre los botones */
+}
+
+header .icono {
+    width: 20px; /* Ajusta el ancho de la imagen */
+    height: 20px; /* Ajusta el alto de la imagen */
+    margin-right: 5px; /* Espacio entre la imagen y el texto */
+}
+
+header .botones button:hover { 
+    background-color: var(--c7);
+    transform: scale(1.1);
+    transition: all 0.2s;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* >>>>> ESTILOS DEL INTRO Y SU CONTENIDO <<<<< */
+.principal {
+    margin-top: 4rem;
+    display: flex; /* Usar flexbox para alinear los elementos en línea */
+    align-items: flex-start; /* Alinear los elementos al inicio (parte superior) */
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.principal h1  {
+    color: var(--c1); /* Cambia el color del título */
+    margin-bottom: 10px; /* Espacio entre el título y el contenido(debajo) */
+    margin-left: 50px; /* Espacio entre el títolo y el margen izquierdo */
+}
+
+.principal .intro {
+    text-align: left; /* Centra el texto dentro de .intro */
+    padding: 20px;
+    margin-right: 20px; /* Espacio entre el div .intro y la imagen */
+    font-size: 25px;
+}
+
+.principal .intro p {
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 20px;
+    color: var(--c4); /* Cambia esto a tu color de texto dentro del parrafo del intro */
+}
+
+.principal .intro .botones {
+    margin-top: 15px;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-color: var(--c1);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--c2);
+    display: flex;
+    align-items: center;
+}
+
+.principal .intro .botones:hover { 
+    background-color: var(--c7);
+    transform: scale(1.1);
+    transition: all 0.2s;
+}
+
+.principal .intro .icono {
+    width: 20px; /* Ajusta el ancho de la imagen */
+    height: 20px; /* Ajusta el alto de la imagen */
+    margin-right: 5px; /* Espacio entre la imagen y el texto */
+}
+
+.principal .networld {
+    max-width: 100%; /* Mantiene la imagen dentro de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-top: 1rem; /* Espacio superior, si es necesario */
+    margin-left: 11rem;
+}
+
+/* >>>>> TARJETAS <<<<< */
+.container_tarjetas {
+    background-color: var(--c1); /* Cambia esto a tu color de fondo detras de las tarjetas*/
+    font-size: 18px; /* Cambia el tamaño del texto dentro de las tarjetas */
+    display: flex; /* Usa flexbox para alinear las tarjetas en fila */
+    justify-content: center; /* Alinea las tarjetas en columna */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan hacia abajo si no caben en una fila */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 80px;
+}
+
+.tarjeta{
+    background: var(--c2); /* Color de fondo de las tarjetas */
+    padding: 2rem; /* Espacio dentro de la tarjeta */
+    border-radius: 25px;
+    box-shadow: 0 2px 25px rgb(184, 70, 70);
+    height: 25rem;
+    width: 30rem;
+    text-align: center;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* >> Titulo antes de las tarjetas <<*/
+h2.planes {
+    color: var(--c2);
+    margin-bottom: 20px; /* Espacio entre las tarjetas */
+    width: 100%;
+    text-align: center;
+}
+
+/* >> Icono dentro de las tarjetas <<*/
+.tarjeta img {
+    margin-right: 250px;
+    width: 15%; /* Ajusta el tamaño de la imagen para que ocupe todo el ancho de la tarjeta */
+    height: 17%; /* Ajusta el tamaño de la imagen para que ocupe todo el alto de la tarjeta */
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio de la tarjeta */
+}
+
+/* >> Estilos de los sub-títulos dentro de las tarjetas << */
+.tarjeta h2 {
+    color: var(--c4);
+    margin-top: 10px;/* Espacio entre el título y el contenido(debajo) */
+}
+
+/* >> Estilos del texto dentro de la tarjeta <<*/
+.tarjeta p {
+    font-size: 16px; /* Asegúrate de que este estilo no esté sobrescribiendo el tuyo */
+    font-weight: bold;
+    text-align: justify;
+    margin: 20px 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: var(--c4);
+}
+
+.container_tarjetas button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: var(--c1);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: flex; /* Asegúrate de que el botón use flexbox */
+    align-items: center; /* Alinea verticalmente el contenido */
+    width: 35%;
+}
+
+.container_tarjetas button:hover {
+    background-color: var(--c7);
+    transform: scale(1.1);
+    transition: all 0.2s;
+}
+
+.container_tarjetas .icono {
+    width: 20px; /* Ajusta el ancho de la imagen dentro del botón */
+    height: 20px; /* Ajusta el alto de la imagen dentro del botón */
+    margin-right: 15px; /* Espacio entre la imagen y el texto dentro del botón */
+}
+
+/* >>>>> CONTENIDO DESPUES DE LAS TARJETAS <<<<< */
+.container-parrafo h3.parrafo-principal {
+    color: var(--c4);
+    text-align: center;
+    font-size: 25px;
+    margin-top: 90px;
+    margin-bottom: 30px; /* Espacio entre el título y el contenido(debajo) */
+}
+
+.container-parrafo .parrafo {
+    color: var(--c4);
+    text-align: justify;
+    margin-bottom: 30px; /* Espacio entre el título y el contenido(debajo) */
+    margin-left: 200px;
+    margin-right: 200px;
+    font-weight: bold;
+}
+
+.container-parrafo .mapa1 {
+    margin-bottom: 30px; /* Espacio entre el título y el contenido(debajo) */
+    margin-left: 350px;
+    margin-right: 500px;
+    height: 1100px;
+    width: 1200px;
+}
+
+/* >>>>> FORMULARIO E INFORMACION <<<<< */
+.registro-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.registro {
+    padding-left: 90px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    border: 2px solid #416ca4; /*borde del formulario */
+    border-radius: 5px;
+    max-width: 45rem; /* Ajusta el ancho mßximo del formulario */
+    max-height: 50rem; /* Ajusta el alto mßximo del formulario */
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 2px;
+    margin-bottom: 0px;
+    margin-left: 45px;
+    font-size: 30px;
+}
+
+.desc-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    margin-left: 45px;
+    font-size: 12px;
+}
+
+.formulario label { 
+    margin-top: 5px;
+    margin-bottom: 15px; /* Espacio entre las etiquetas y los campos de entrada */
+    color: var(--c4);
+    font-weight: bold; /* Hace que las etiquetas (descrpciones del formulario) sean negritas */
+}
+
+.formulario input {
+    margin-bottom: 20px; /* Espacio entre las etiquetas y los campos de entrada */
+    padding: 10px;
+    border: 2px solid #129cc6; /* Cambia el color del borde del formulario */
+    border-radius: 5px;
+}
+
+.formulario button {
+    padding: 15px;
+    background: var(--c1);
+    color: var(--c2);
+    border: none;
+    border-radius: 5px;
+    max-width: 20%;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.formulario button:hover {
+    background: var(--c7);
+}
+
+select {
+    padding: 10px;
+    border: 2px solid #129cc6; /* Cambia el color del borde del formulario */
+    border-radius: 5px;
+}
+
+.informacion1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-right: 90px;
+}
+
+.intro-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.intro-info p {
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: 20px;
+    color: var(--c4); /* Cambia esto a tu color de texto dentro del parrafo del intro */
+}
+
+.punto-info {
+    margin: 20px; /* Espaciado alrededor del contenedor principal */
+}
+
+.info-item {
+    display: flex; /* Usar flexbox para alinear los elementos */
+    justify-content: space-between; /* Espacio entre el label y el small */
+    align-items: flex-start; /* Alinear los elementos al inicio */
+    margin-bottom: 10px; /* Espacio entre cada par de label y small */
+}
+
+.punto-info label {
+    flex: 0 0 310px; /* Ancho fijo para el label (ajusta según sea necesario) */
+    font-size: 20px;
+    text-align: right;
+    margin-right: 13px;
+}
+
+.punto-info small {
+    flex: 1; /* Permitir que el small ocupe el espacio restante */
+    margin-left: 10px; /* Espacio entre el label y el small */
+}
+
+.final-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+/* >>>>> ULTIMOS BOTONES DE INICIO DE SESION Y CONSULTA <<<<< */
+.gestiona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 20px;
+    margin-right: 20px; /* Espacio entre el div .intro y la imagen */
+    font-size: 25px;
+}
+
+.botones2 {
+    display: flex; /* Usa flexbox para alinear los elementos en línea */
+    justify-content: center; /* Alinea los botones a la derecha */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    padding-right: 20px; /* Espacio a la derecha de los botones */
+}
+
+.botones2 button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: var(--c1);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #fff;
+    margin-left: 10px; /* Espacio entre los botones */
+    margin-right: 15px; /* Espacio entre los botones */
+    margin-top: 5px;
+    margin-bottom: 35px;
+}
+
+.icono2 {
+    width: 20px; /* Ajusta el ancho de la imagen */
+    height: 20px; /* Ajusta el alto de la imagen */
+    margin-right: 5px; /* Espacio entre la imagen y el texto */
+}
+
+.botones2 button:hover { 
+    background-color: var(--c7);
+    transform: scale(1.1);
+    transition: all 0.2s;
+}
+
+
+/* >>>>> ESTILOS DEL FOOTER <<<<< */
+footer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px 0;
+    background: var(--c3);
+    color: var(--c2);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding-left: 50px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    font-size: 20px;
+}
+
+footer .logofooter {
+    max-width: 50%;
+    margin-top: 2rem;
+    margin-bottom: 10px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7469%) hue-rotate(125deg) brightness(105%) contrast(102%);
+    margin-left: 4rem;
+}
+
+footer .telefonos {
+    padding-left: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 10px;
+    
+}
+
+/* >>>>> ICONOS DE CHAT EN VIVO <<<<< */
+.redes {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.redes a {
+    margin-top: 15px;
+}  
+
+.redes img  {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Escala inicial */
+    }
+    50% {
+        transform: scale(1.1); /* Escala al 110% */
+    }
+    100% {
+        transform: scale(1); /* Regresa a la escala inicial */
+    }
+}
+
+.whatsapp {
+    animation: pulse 1.5s infinite; /* Aplicar la animación de pulsar */
+}
+
+.zredes {
+    animation: pulse 1.5s infinite; /* Aplicar la animación de pulsar */
+}
+
+@media (min-width: 480px) and (max-width: 768px) { /*tenia 600px*/
+    body {
+        padding: 15px; /* Aumenta el espacio en pantallas pequeñas */
+        font-size: 14px; /* Reduce el tamaño de fuente en pantallas pequeñas */
+    }
+
+    header {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        align-items: center; /* Alinea los elementos al inicio */
+        padding: 10px; /* Ajusta el padding */
+        border-radius: 10px;
+    }
+
+    .logo {
+    max-width: 250px; /* Cambia esto según lo que necesites */
+    max-height: 500px; /* Cambia esto según lo que necesites */
+    height: auto; /* Mantiene la proporción */
+    width: auto; /* Mantiene la proporción */
+    margin-right: 80px;
+    position: relative
+    }
+    
+    .menu-toggle {
+        display: none; /* Muestra el botón de menú en pantallas pequeñas */
+        padding-right: 30px;
+    }
+    
+    .menu-icon {
+        display: block; /* Muestra el botón de menú en pantallas pequeñas */
+        color: var(--c1);
+        font-size: 35px;
+        margin-right: 300px; /* Espacio entre el botón(hamburguesa) y el contenido */
+    }
+    
+    /* Estilo del menú */
+    nav {
+        display: flex; /* Por defecto, el menú es un flex container */
+        flex-direction: column; /* Alinea los elementos en columna */
+        max-height: 0; /* Oculta el menú inicialmente */
+        overflow: hidden; /* Oculta el contenido que excede el max-height */
+        transition: max-height 0.5s ease; /* Transición suave para max-height */
+        align-items: center; /* Centra los elementos horizontalmente */
+        width: 100%;
+    }
+    
+    /* Estilo de los enlaces del menú */
+    nav a {
+        text-decoration: none; /* Sin subrayado */
+        padding: 10px 20px; /* Espaciado interno */
+        transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        width: 100%; /* Asegura que los enlaces ocupen todo el ancho */
+        text-align: center; /* Centra el texto dentro del enlace */
+    }
+    
+    /* Muestra el menú desplegable al hacer clic en el botón */
+    .menu-toggle:checked + .menu-icon + nav {
+        max-height: 500px; /* Ajusta este valor según el contenido del menú */
+    }
+    
+    /* Efecto hover para los enlaces */
+    nav a:hover {
+        background-color: none; /* Cambia el color de fondo al pasar el mouse */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0; /* Espaciado vertical entre los enlaces */
+        position: relative;
+    }
+    
+    header nav ul li ul {
+        opacity: 0; /* Oculta el submenú por defecto */
+        position: absolute; /* Posiciona el submenú de forma absoluta */
+        top: 100%; /* Coloca el submenú justo debajo del elemento padre */
+        left: 35%; /* Alinea el submenú a la izquierda del elemento padre */
+        background-color: var(--c7); /* Color de fondo del submenú */
+        padding: 10px; /* Espaciado interno */
+        border-radius: 15px; /* Bordes redondeados */
+        z-index: 1; /* Asegúrate de que el submenú esté por encima de otros elementos */
+        width: 40%; /* Asegura que el submenú ocupe todo el ancho */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Transición suave para la opacidad y el desplazamiento */
+        transform: translateY(10px); /* Desplaza el submenú hacia abajo inicialmente */
+        visibility: hidden; /* Oculta el submenú */
+    }
+    
+    header nav ul li:hover > ul {
+        opacity: 1; /* Muestra el submenú */
+        transform: translateY(0); /* Restablece el desplazamiento al mostrar */
+        visibility: visible; /* Asegura que el submenú sea visible */
+    }
+
+    header nav ul li ul li {
+        white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    }
+
+    header nav ul li ul li a {
+        font-size: 13px; /* Tamaño de fuente */
+        color: var(--c2); /* Color del texto */
+        display: block; /* Asegura que el enlace ocupe todo el ancho */
+        padding: 5px 10px; /* Espaciado interno */
+    }
+
+    header .botones {
+        padding-right: 20px; /* Reduce el padding a la derecha */
+        width: 60%; /* Asegura que los botones ocupen todo el ancho */
+        justify-content: flex-start; /* Alinea los botones a la izquierda */
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    header .botones button {
+        font-size: 14px; /* Aumenta el tamaño de fuente de los botones */
+        padding: 8px 15px; /* Ajusta el padding de los botones */
+    }
+
+    /* Estilos del intro y su contenido*/
+    .principal {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        margin-top: 4rem; /* Ajusta el margen superior */
+        margin-bottom: 10rem; /* Mantiene el margen inferior */
+    }
+    
+    .principal h1 {
+        color: var(--c1);
+        margin-bottom: 10px; /* Espacio entre el título y el contenido (debajo) */
+        margin-left: 0; /* Elimina el margen izquierdo para centrar */
+        text-align: center; /* Centra el texto del h1 */
+        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+        overflow: hidden; /* Oculta el desbordamiento */
+        font-size: 3.5rem;
+        text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
+    }
+    
+    .principal .intro {
+        text-align: center; /* Centra el texto dentro de .intro */
+        padding: 20px;
+        margin-right: 0; /* Elimina el margen derecho */
+        
+    }
+    
+    .principal .intro p {
+        margin-top: 10px;
+        margin-left: 0; /* Elimina el margen izquierdo */
+        font-size: 20px;
+        color: var(--c4); /* Cambia esto a tu color de texto dentro del párrafo del intro */
+        text-align: center; /* Centra el texto del párrafo */
+    }
+    
+    .principal .intro .botones {
+        margin-top: 15px;
+        margin-left: 0; /* Elimina el margen izquierdo */
+        border-radius: 10px;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centra el contenido del botón */
+    }
+    
+    .principal .networld {
+        max-width: 100%; /* Mantiene la imagen dentro de su contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin-top: 1rem; /* Espacio superior, si es necesario */
+        margin-left: 0; /* Elimina el margen izquierdo */
+        align-self: center; /* Centra la imagen dentro del contenedor */
+    }
+
+    /* TARJETAS */
+    .container_tarjetas {
+        font-size: 16px; /* Cambia el tamaño del texto dentro de las tarjetas */
+        display: flex; /* Usa flexbox para alinear las tarjetas en fila */
+        justify-content: center; /* Alinea las tarjetas en columna */
+        flex-wrap: wrap; /* Permite que las tarjetas se envuelvan hacia abajo si no caben en una fila */
+        gap: 20px; /* Espacio entre las tarjetas */
+        padding: 40px; /* Reduce el padding para pantallas más pequeñas */
+        border-radius: 10px;
+    }
+
+    .tarjeta {
+        padding: 1rem; /* Reduce el espacio dentro de la tarjeta */
+        border-radius: 15px; /* Reduce el radio de los bordes */
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+        width: 100%; /* Aumenta el ancho para que ocupe más espacio en pantallas más pequeñas */
+        max-width: 420px; /* Limita el ancho máximo de la tarjeta */
+        text-align: center;
+        margin-top: 15px; /* Reduce el margen superior */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Alinea los elementos al inicio */
+    }
+
+    h2.planes {
+        margin-bottom: 20px; /* Espacio entre las tarjetas */
+        width: 100%;
+        text-align: center;
+    }
+
+    .tarjeta img {
+        /*margin: 0 auto;  Centra la imagen */
+        width: 17%; /* Ajusta el tamaño de la imagen para que ocupe más espacio */
+        height: auto; /* Mantiene la proporción de la imagen */
+        object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio de la tarjeta */
+    }
+
+    .tarjeta h2 {
+        margin-top: 10px; /* Espacio entre el título y el contenido (debajo) */
+    }
+
+    .tarjeta p {
+        font-size: 14px; /* Reduce el tamaño del texto */
+        font-weight: bold;
+        text-align: justify;
+        margin: 10px 15px; /* Reduce los márgenes */
+    }
+
+    .tarjeta .icono {
+        width: 15px; /* Reduce el ancho de la imagen dentro de la tarjeta */
+        height: 15px; /* Reduce el alto de la imagen dentro de la tarjeta */
+        margin: 10px; /* Espacio alrededor del icono */
+        align-self: flex-start; /* Alinea el icono en la parte superior izquierda */
+    }
+
+    .container_tarjetas button {
+        padding: 10px 15px; /* Ajusta el padding del botón */
+        font-size: 14px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-top: 15px;
+        display: flex; /* Asegúrate de que el botón use flexbox */
+        align-items: center; /* Alinea verticalmente el contenido */
+        width: 30%; /* Aumenta el ancho del botón */
+        margin-left: 15px; /* Centra el botón */
+    }
+
+    .container_tarjetas button:hover {
+        transform: scale(1.1);
+        transition: all 0.2s;
+    }
+
+    /* CONTENIDO DESPUES DE LAS TARJETAS*/
+    .container-parrafo h3.parrafo-principal {
+        text-align: center;
+        margin-top: 60px; /* Reduce el margen superior */
+        margin-bottom: 20px; /* Reduce el espacio entre el título y el contenido (debajo) */
+    }
+
+    .container-parrafo .parrafo {
+        text-align: justify;
+        margin-bottom: 20px; /* Reduce el espacio entre el párrafo y el siguiente contenido */
+        margin-left: 20px; /* Reduce el margen izquierdo */
+        margin-right: 20px; /* Reduce el margen derecho */
+        font-size: 16px; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+    }
+
+    .container-parrafo .mapa1 {
+        margin-bottom: 30px; /* Espacio entre el mapa y el contenido (debajo) */
+        margin-left: auto; /* Centra el mapa horizontalmente */
+        margin-right: auto; /* Centra el mapa horizontalmente */
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+        width: 90%; /* Ajusta el ancho para que ocupe más espacio en pantallas más pequeñas */
+        max-width: 600px; /* Limita el ancho máximo del mapa */
+    }
+
+    /* FORMULARIO DE REGISTRO */
+    .registro-info {
+        display: flex;
+        flex-direction: column; /* Cambia a columna para apilar los elementos */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
+
+    .registro {
+        padding-left: 0; /* Elimina el padding izquierdo para centrar */
+    }
+
+    .contacto {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinea a la izquierda */
+        padding: 2px;
+        margin-bottom: 0px;
+        margin-left: 0; /* Elimina el margen izquierdo */
+        font-size: 24px; /* Ajusta el tamaño de la fuente */
+    }
+
+    .desc-contacto {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinea a la izquierda */
+        padding: 20px;
+        margin-top: 0; /* Elimina el margen superior */
+        margin-bottom: 15px;
+        margin-left: 0; /* Elimina el margen izquierdo */
+        font-size: 12px;
+    }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinea a la izquierda */
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 90%; /* Ajusta el ancho máximo del formulario */
+        margin: 0 auto 50px; /* Centra el formulario y agrega margen inferior */
+    }
+
+    .formulario label { 
+        margin-top: 5px;
+        margin-bottom: 15px; /* Espacio entre las etiquetas y los campos de entrada */
+        font-weight: bold; /* Hace que las etiquetas (descripciones del formulario) sean negritas */
+    }
+
+    .formulario input {
+        margin-bottom: 20px; /* Espacio entre las etiquetas y los campos de entrada */
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
+    }
+
+    .formulario button {
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        max-width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    select {
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%; /* Asegura que el select ocupe todo el ancho disponible */
+    }
+
+    /* SECCION DE INFORMACION */
+    .informacion1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        padding-right: 0; /* Elimina el padding derecho */
+        max-width: 90%; /* Ajusta el ancho máximo */
+        margin: 0 auto; /* Centra la sección de información */
+    }
+
+    .intro-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .intro-info p {
+        margin-top: 20px;
+        margin-left: 0; /* Elimina el margen izquierdo */
+        font-size: 20px;
+    }
+
+    .punto-info {
+        margin: 20px; /* Espaciado alrededor del contenedor principal */
+    }
+
+    /* PIE DE PAGINA */
+    footer {
+        flex-direction: column; /* Cambia a columna para mejor disposición */
+        align-items: center; /* Centra los elementos */
+        padding-left: 0; /* Elimina el padding izquierdo */
+        padding-top: 2rem; /* Ajusta el padding superior */
+        padding-bottom: 2rem; /* Ajusta el padding inferior */
+        font-size: 18px; /* Reduce el tamaño de fuente si es necesario */
+        border-radius: 10px;
+    }
+
+    footer .logofooter {
+        max-width: 80%; /* Aumenta el ancho máximo para pantallas más pequeñas */
+        margin-left: 0; /* Elimina el margen izquierdo */
+        margin-top: 1rem; /* Ajusta el margen superior */
+    }
+
+    footer .telefonos {
+        padding-left: 0; /* Elimina el padding izquierdo */
+        margin-top: 1rem; /* Ajusta el margen superior */
+        text-align: center; /* Centra el texto */
+    }
+}
+
+/* Media Queries para pantallas medianas */
+@media (min-width: 769px) and (max-width: 1519px) {
+    body {
+        padding: 15px; /* Aumenta el espacio en pantallas pequeñas */
+        font-size: 14px; /* Reduce el tamaño de fuente en pantallas pequeñas */
+    }
+
+    header {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        align-items: center; /* Alinea los elementos al inicio */
+        padding: 10px; /* Ajusta el padding */
+        border-radius: 10px;
+    }
+
+    .logo {
+        max-width: 250px; /* Cambia esto según lo que necesites */
+        max-height: 500px; /* Cambia esto según lo que necesites */
+        height: auto; /* Mantiene la proporción */
+        width: auto; /* Mantiene la proporción */
+        margin-right: 80px;
+        position: relative;
+    }
+    
+    .menu-toggle {
+        display: none; /* Muestra el botón de menú en pantallas pequeñas */
+        padding-right: 30px;
+    }
+    
+    .menu-icon {
+        display: block; /* Muestra el botón de menú en pantallas pequeñas */
+        color: var(--c1);
+        font-size: 40px;
+        margin-right: 300px; /* Espacio entre el botón(hamburguesa) y el contenido */
+    }
+    
+    /* Estilo del menú */
+    nav {
+        display: flex; /* Por defecto, el menú es un flex container */
+        flex-direction: column; /* Alinea los elementos en columna */
+        max-height: 0; /* Oculta el menú inicialmente */
+        overflow: hidden; /* Oculta el contenido que excede el max-height */
+        transition: max-height 0.5s ease; /* Transición suave para max-height */
+        align-items: center; /* Centra los elementos horizontalmente */
+        width: 100%;
+    }
+    
+    /* Estilo de los enlaces del menú */
+    nav a {
+        text-decoration: none; /* Sin subrayado */
+        padding: 10px 20px; /* Espaciado interno */
+        transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        width: 100%; /* Asegura que los enlaces ocupen todo el ancho */
+        text-align: center; /* Centra el texto dentro del enlace */
+    }
+    
+    /* Muestra el menú desplegable al hacer clic en el botón */
+    .menu-toggle:checked + .menu-icon + nav {
+        max-height: 500px; /* Ajusta este valor según el contenido del menú */
+    }
+    
+    /* Efecto hover para los enlaces */
+    nav a:hover {
+        background-color: none; /* Cambia el color de fondo al pasar el mouse */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0; /* Espaciado vertical entre los enlaces */
+        position: relative;
+    }
+    
+    header nav ul li ul {
+        opacity: 0; /* Oculta el submenú por defecto */
+        position: absolute; /* Posiciona el submenú de forma absoluta */
+        top: 100%; /* Coloca el submenú justo debajo del elemento padre */
+        left: 38%; /* Alinea el submenú a la izquierda del elemento padre */
+        background-color: var(--c7); /* Color de fondo del submenú */
+        padding: 10px; /* Espaciado interno */
+        border-radius: 15px; /* Bordes redondeados */
+        z-index: 1; /* Asegúrate de que el submenú esté por encima de otros elementos */
+        width: 25%; /* Asegura que el submenú ocupe todo el ancho */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Transición suave para la opacidad y el desplazamiento */
+        transform: translateY(10px); /* Desplaza el submenú hacia abajo inicialmente */
+        visibility: hidden; /* Oculta el submenú */
+    }
+    
+    header nav ul li:hover > ul {
+        opacity: 1; /* Muestra el submenú */
+        transform: translateY(0); /* Restablece el desplazamiento al mostrar */
+        visibility: visible; /* Asegura que el submenú sea visible */
+    }
+
+    header nav ul li ul li {
+        white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    }
+
+    header nav ul li ul li a {
+        font-size: 13px; /* Tamaño de fuente */
+        display: block; /* Asegura que el enlace ocupe todo el ancho */
+        padding: 5px 10px; /* Espaciado interno */
+    }
+
+    header .botones {
+        padding-right: 20px; /* Reduce el padding a la derecha */
+        width: 60%; /* Asegura que los botones ocupen todo el ancho */
+        justify-content: flex-start; /* Alinea los botones a la izquierda */
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    header .botones button {
+        font-size: 14px; /* Aumenta el tamaño de fuente de los botones */
+        padding: 8px 15px; /* Ajusta el padding de los botones */
+    }
+
+    /*espacio*/
+
+    /* ---Estilos del intro y su contenido */
+    .principal {
+        flex-direction: column; /* Mantiene la dirección del flex en columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        margin-top: 4rem; /* Ajusta el margen superior */
+        margin-bottom: 5rem; /* Reduce el margen inferior para pantallas más grandes */
+    }
+    
+    .principal h1 {
+        margin-bottom: 15px; /* Aumenta el espacio entre el título y el contenido */
+        margin-left: 0; /* Elimina el margen izquierdo para centrar */
+        text-align: center; /* Centra el texto del h1 */
+        white-space: normal; /* Permite que el texto se divida en varias líneas */
+        overflow: visible; /* Muestra el desbordamiento */
+        text-overflow: clip; /* Elimina los puntos suspensivos */
+        font-size: 3.5rem; /* Aumenta el tamaño de la fuente para pantallas más grandes */
+    }
+    
+    .principal .intro {
+        text-align: center; /* Centra el texto dentro de .intro */
+        padding: 20px;
+        margin-right: 0; /* Elimina el margen derecho */
+    }
+    
+    .principal .intro p {
+        margin-top: 10px;
+        margin-left: 0; /* Elimina el margen izquierdo */
+        font-size: 1.2rem; /* Ajusta el tamaño de la fuente */
+        text-align: center; /* Centra el texto del párrafo */
+    }
+    
+    .principal .intro .botones {
+        margin-top: 15px;
+        margin-left: 0; /* Elimina el margen izquierdo */
+        border-radius: 10px;
+        border: none;
+        padding: 12px 25px; /* Ajusta el padding de los botones */
+        cursor: pointer;
+        font-size: 1.2rem; /* Ajusta el tamaño de la fuente de los botones */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centra el contenido del botón */
+    }
+    
+    .principal .networld {
+        max-width: 90%; /* Mantiene la imagen dentro de su contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin-top: 1rem; /* Espacio superior, si es necesario */
+        margin-left: 0; /* Elimina el margen izquierdo */
+        align-self: center; /* Centra la imagen dentro del contenedor */
+    }
+
+    /* TARJETAS */
+    .container_tarjetas {
+        font-size: 18px; /* Aumenta el tamaño del texto dentro de las tarjetas */
+        display: flex; /* Usa flexbox para alinear las tarjetas en fila */
+        justify-content: center; /* Alinea las tarjetas en columna */
+        flex-wrap: wrap; /* Permite que las tarjetas se envuelvan hacia abajo si no caben en una fila */
+        gap: 20px; /* Espacio entre las tarjetas */
+        padding: 40px; /* Mantiene el padding para pantallas medianas */
+        border-radius: 10px;
+    }
+
+    .tarjeta {
+        padding: 1.5rem; /* Aumenta el espacio dentro de la tarjeta */
+        border-radius: 15px; /* Mantiene el radio de los bordes */
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+        width: 100%; /* Aumenta el ancho para que ocupe más espacio en pantallas más pequeñas */
+        max-width: 420px; /* Limita el ancho máximo de la tarjeta */
+        text-align: center;
+        margin-top: 15px; /* Mantiene el margen superior */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Alinea los elementos al inicio */
+    }
+
+    h2.planes {
+        margin-bottom: 20px; /* Espacio entre las tarjetas */
+        width: 100%;
+        text-align: center;
+    }
+
+    .tarjeta img {
+        width: 17%; /* Ajusta el tamaño de la imagen para que ocupe más espacio */
+        height: auto; /* Mantiene la proporción de la imagen */
+        object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio de la tarjeta */
+    }
+
+    .tarjeta h2 {
+        margin-top: 10px; /* Espacio entre el título y el contenido (debajo) */
+    }
+
+    .tarjeta p {
+        font-size: 16px; /* Aumenta el tamaño del texto */
+        font-weight: bold;
+        text-align: justify;
+        margin: 10px 15px; /* Mantiene los márgenes */
+    }
+
+    .tarjeta .icono {
+        width: 20px; /* Aumenta el ancho de la imagen dentro de la tarjeta */
+        height: 20px; /* Aumenta el alto de la imagen dentro de la tarjeta */
+        margin: 10px; /* Espacio alrededor del icono */
+        align-self: flex-start; /* Alinea el icono en la parte superior izquierda */
+    }
+
+    .container_tarjetas button {
+        padding: 10px 15px; /* Ajusta el padding del botón */
+        font-size: 15px; /* Aumenta el tamaño de la fuente del botón */
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-top: 15px;
+        display: flex; /* Asegúrate de que el botón use flexbox */
+        align-items: center; /* Alinea verticalmente el contenido */
+        width: 34%; /* Aumenta el ancho del botón */
+        margin-left: 15px; /* Centra el botón horizontalmente */
+        
+    }
+
+    .container_tarjetas button:hover {
+        transform: scale(1.1);
+        transition: all 0.2s;
+    }
+
+    /* CONTENIDO DESPUÉS DE LAS TARJETAS */
+    .container-parrafo h3.parrafo-principal {
+        text-align: center;
+        margin-top: 40px; /* Reduce el margen superior para pantallas más grandes */
+        margin-bottom: 20px; /* Mantiene el espacio entre el título y el contenido (debajo) */
+        font-size: 2rem; /* Aumenta el tamaño de la fuente para mejor legibilidad */
+    }
+
+    .container-parrafo .parrafo {
+        text-align: justify;
+        margin-bottom: 20px; /* Mantiene el espacio entre el párrafo y el siguiente contenido */
+        margin-left: 20px; /* Mantiene el margen izquierdo */
+        margin-right: 20px; /* Mantiene el margen derecho */
+        font-size: 1.2rem; /* Aumenta el tamaño de la fuente para pantallas más grandes */
+    }
+
+    .container-parrafo .mapa1 {
+        margin-bottom: 30px; /* Espacio entre el mapa y el contenido (debajo) */
+        margin-left: auto; /* Centra el mapa horizontalmente */
+        margin-right: auto; /* Centra el mapa horizontalmente */
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+        width: 80%; /* Ajusta el ancho para que ocupe más espacio en pantallas más grandes */
+        max-width: 800px; /* Limita el ancho máximo del mapa */
+    }
+
+    /* FORMULARIO DE REGISTRO */
+    .registro-info {
+        display: flex;
+        flex-direction: column; /* Cambia a columna para apilar los elementos */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
+
+    .registro {
+        padding-left: 0; /* Elimina el padding izquierdo para centrar */
+    }
+
+    .contacto {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinea a la izquierda */
+        padding: 2px;
+        margin-bottom: 0px;
+        margin-left: 0; /* Elimina el margen izquierdo */
+        font-size: 24px; /* Ajusta el tamaño de la fuente */
+    }
+
+    .desc-contacto {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinea a la izquierda */
+        padding: 20px;
+        margin-top: 0; /* Elimina el margen superior */
+        margin-bottom: 15px;
+        margin-left: 0; /* Elimina el margen izquierdo */
+        font-size: 14px; /* Aumenta el tamaño de la fuente */
+    }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinea a la izquierda */
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 80%; /* Ajusta el ancho máximo del formulario */
+        margin: 0 auto 50px; /* Centra el formulario y agrega margen inferior */
+    }
+
+    .formulario label { 
+        margin-top: 5px;
+        margin-bottom: 10px; /* Reduce el espacio entre las etiquetas y los campos de entrada */
+        font-weight: bold; /* Hace que las etiquetas (descripciones del formulario) sean negritas */
+    }
+
+    .formulario input {
+        margin-bottom: 20px; /* Espacio entre las etiquetas y los campos de entrada */
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
+    }
+
+    .formulario button {
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        max-width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+        cursor: pointer;
+        font-size: 16px; /* Aumenta el tamaño de la fuente del botón */
+        font-weight: bold;
+    }
+
+    select {
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%; /* Asegura que el select ocupe todo el ancho disponible */
+    }
+
+    /* SECCION DE INFORMACION */
+    .informacion1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        padding-right: 0; /* Elimina el padding derecho */
+        max-width: 90%; /* Ajusta el ancho máximo */
+        margin: 0 auto; /* Centra la sección de información */
+    }
+
+    .intro-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        font-size: 20px; /* Mantiene el tamaño de la fuente */
+    }
+
+    .intro-info p {
+        margin-top: 20px;
+        margin-left: 0; /* Elimina el margen izquierdo */
+        font-size: 18px; /* Aumenta el tamaño de la fuente */
+    }
+
+    .punto-info {
+        margin: 20px; /* Espaciado alrededor del contenedor principal */
+    }
+     /* PIE DE PAGINA */
+     footer {
+        display: flex; /* Asegúrate de que el footer use flexbox */
+        flex-direction: column; /* Cambia a columna para mejor disposición */
+        align-items: center; /* Centra los elementos */
+        padding-left: 0; /* Elimina el padding izquierdo */
+        padding-top: 2rem; /* Ajusta el padding superior */
+        padding-bottom: 2rem; /* Ajusta el padding inferior */
+        font-size: 20px; /* Aumenta el tamaño de fuente para mejor legibilidad */
+        border-radius: 10px;
+    }
+
+    footer .logofooter {
+        max-width: 60%; /* Ajusta el ancho máximo para pantallas medianas */
+        margin-left: 0; /* Elimina el margen izquierdo */
+        margin-top: 1rem; /* Ajusta el margen superior */
+    }
+
+    footer .telefonos {
+        padding-left: 0; /* Elimina el padding izquierdo */
+        margin-top: 1rem; /* Ajusta el margen superior */
+        text-align: center; /* Centra el texto */
+        font-size: 18px; /* Ajusta el tamaño de la fuente para los teléfonos */
+    }
+}
